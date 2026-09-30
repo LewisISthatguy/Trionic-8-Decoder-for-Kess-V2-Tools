@@ -61,8 +61,7 @@ def convert_and_save():
         original = input_file.read_bytes()
 
         converted = flip_16bit_words(original)
-
-        # Suggest a sensible filename.
+        
         if input_file.stem.endswith(" Bit Flip"):
             suggested_name = (
                 input_file.stem[:-8].rstrip() + ".bin"
@@ -90,7 +89,6 @@ def convert_and_save():
 
         output_file = Path(output_file)
 
-        # Warn if trying to overwrite the input.
         if output_file.resolve() == input_file.resolve():
             overwrite = messagebox.askyesno(
                 "Overwrite original?",
@@ -124,11 +122,6 @@ def convert_and_save():
             "Error",
             f"Something went wrong:\n\n{error}"
         )
-
-
-# ---------------------------------------------------------
-# Main window
-# ---------------------------------------------------------
 
 input_file = None
 

@@ -193,4 +193,3 @@ status_label.pack(pady=15)
 
 
 root.mainloop()
-
